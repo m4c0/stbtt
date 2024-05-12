@@ -6,11 +6,11 @@ import stbtt;
 unsigned char ttf_buffer[1 << 25];
 
 int main(int argc, char **argv) {
-  stbtt_fontinfo font;
+  stbtt_fontinfo font{};
   unsigned char *bitmap;
   int w, h, i, j, c = 'a', s = 20;
 
-  fread(ttf_buffer, 1, 1 << 25, fopen("VictorMono-Regular.otf", "rb"));
+  fread(ttf_buffer, 1, 1 << 25, fopen("c:\\Windows\\Fonts\\arial.ttf", "rb"));
 
   stbtt_InitFont(&font, ttf_buffer, stbtt_GetFontOffsetForIndex(ttf_buffer, 0));
   bitmap = stbtt_GetCodepointBitmap(
